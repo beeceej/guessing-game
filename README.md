@@ -3,6 +3,9 @@
 Attempt at learning CL?
 
 ## Compiling:
-`$ ./compile.sh`
+`$ make compile`
+
+## Running / playing this great game
+`$ ./bin/guessing-game`
 
 Everyones gotta start somewhere, right?
