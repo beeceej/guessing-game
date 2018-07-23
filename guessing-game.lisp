@@ -6,12 +6,20 @@
 (defun is-winner? (b answer)
   (if b (print "*You Win!*") (format t "~%*You Lose!*~%~%*The answer was ~a*" answer)))
 
+(defun capture-user-guess ()
+  (handler-case
+    (parse-integer (read-line))
+    (t (c)
+      (progn
+        (format t "*Invalid input, expecting a number*~%")
+        (capture-user-guess )))))
+
 (defun .guessing-game (curr-try max-tries target)
   (if (>= curr-try max-tries)
     nil
     (progn
       (format t "*Guess ~a*~%" curr-try)
-      (let ((guess (parse-integer(read-line))))
+      (let ((guess (capture-user-guess )))
         (if (eq guess target)
           t
           (progn
