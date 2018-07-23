@@ -10,9 +10,9 @@
   (handler-case
     (parse-integer (read-line))
     (t (c)
-      (progn
-        (format t "*Invalid input, expecting a number*~%")
-        (capture-user-guess )))))
+      (declare (ignore c))
+      (format t "*Invalid input, expecting a number*~%")
+      (capture-user-guess ))))
 
 (defun .guessing-game (curr-try max-tries target)
   (if (>= curr-try max-tries)
