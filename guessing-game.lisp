@@ -1,7 +1,7 @@
 
 (defun high-or-low (guess target)
- (when (> guess target) (format t "*A bit High*~%"))
- (when (< guess target) (format t "*A bit Low*~%")))
+  (cond ((> guess target) (format t "*A bit High*~%"))
+        ((< guess target) (format t "*A bit Low*~%"))))
 
 (defun is-winnerp (b answer)
   (if b (print "*You Win!*") (format t "~%*You Lose!*~%~%*The answer was ~a*" answer)))
