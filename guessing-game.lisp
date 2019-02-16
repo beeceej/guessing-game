@@ -3,7 +3,7 @@
  (when (> guess target) (format t "*A bit High*~%"))
  (when (< guess target) (format t "*A bit Low*~%")))
 
-(defun is-winner? (b answer)
+(defun is-winnerp (b answer)
   (if b (print "*You Win!*") (format t "~%*You Lose!*~%~%*The answer was ~a*" answer)))
 
 (defun capture-user-guess ()
@@ -32,5 +32,5 @@
     (if (string-equal answer "Y")
       (progn 
         (format t "*Guess a number 0 - ~a* ~%~%" num-range)
-        (is-winner? (.guessing-game 0 tries target) target))
+        (is-winnerp (.guessing-game 0 tries target) target))
       (format t "*Cya*~%"))))
